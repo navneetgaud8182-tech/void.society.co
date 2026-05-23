@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Void Society | Dark Streetwear & Editorial Fashion</title>
+<meta name="description" content="Void Society is a dark, artistic streetwear brand built for those who dress with intention. Shop editorial fashion pieces that go beyond the ordinary.">
+<link rel="canonical" href="https://voidsociety.com/">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sabon:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #080808;
+  --off-black: #111;
+  --dim: #1a1a1a;
+  --border: #2a2a2a;
+  --muted: #555;
+  --mid: #888;
+  --light: #ccc;
+  --white: #f0ede8;
+  --accent: #c8b89a;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Sabon', Georgia, serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 0.5px solid var(--border);
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(8px);
+}
+.nav-logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  position: relative;
+  border-bottom: 0.5px solid var(--border);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.012) 80px, rgba(255,255,255,0.012) 81px);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease both;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: var(--mid);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+.hero-cta {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--white);
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+.hero-cta:hover { background: var(--accent); }
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: pulse 2s infinite;
+}
+section {
+  padding: 6rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.manifesto { border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+.manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.manifesto-text p { color: var(--light); margin-bottom: 1rem; font-size: 1.05rem; }
+.manifesto-text p em { color: var(--accent); }
+.manifesto-stat { text-align: right; }
+.manifesto-number {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--dim);
+  letter-spacing: -0.02em;
+  display: block;
+  user-select: none;
+}
+.collection-section { border-top: 0.5px solid var(--border); }
+.collection-intro { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.collection-intro p { color: var(--mid); max-width: 420px; font-style: italic; }
+.view-all {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--muted);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.view-all:hover { color: var(--white); }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.product-card { cursor: pointer; }
+.product-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--dim);
+  border: 0.5px solid var(--border);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-placeholder { font-family: var(--font-display); font-size: 3rem; letter-spacing: 0.1em; color: var(--border); user-select: none; }
+.product-img::after { content: ''; position: absolute; inset: 0; background: rgba(200,184,154,0.04); opacity: 0; transition: opacity 0.3s; }
+.product-card:hover .product-img::after { opacity: 1; }
+.product-tag { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+.product-name { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.08em; color: var(--light); }
+.product-price { font-size: 0.85rem; color: var(--mid); margin-top: 0.25rem; }
+.philosophy-section { border-top: 0.5px solid var(--border); }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+.pillar { padding: 2rem 0; border-top: 0.5px solid var(--border); }
+.pillar-num { font-family: var(--font-display); font-size: 3rem; color: var(--border); display: block; margin-bottom: 1rem; line-height: 1; }
+.pillar p { font-size: 0.9rem; color: var(--mid); line-height: 1.7; }
+.cta-section { border-top: 0.5px solid var(--border); text-align: center; max-width: 100%; padding: 8rem 2.5rem; background: var(--off-black); }
+.cta-section h2 { font-size: clamp(3rem, 8vw, 7rem); margin-bottom: 1.5rem; }
+.cta-section p { color: var(--mid); font-style: italic; margin-bottom: 2.5rem; font-size: 1rem; }
+.cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); background: var(--white); padding: 0.9rem 2.5rem; text-decoration: none; transition: background 0.2s; }
+.btn-primary:hover { background: var(--accent); }
+.btn-secondary { display: inline-block; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light); background: transparent; padding: 0.9rem 2.5rem; border: 0.5px solid var(--border); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-secondary:hover { border-color: var(--mid); color: var(--white); }
+footer { border-top: 0.5px solid var(--border); padding: 3rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-logo { height: 35px; width: auto; display: block; opacity: 0.5; }
+.footer-copy { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><img src="logo.png" alt="Void Society"></a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="hero-bg"></div>
+  <p class="hero-eyebrow">Dark Streetwear — Vancouver</p>
+  <h1>Void<br>Society</h1>
+  <p class="hero-sub">Editorial fashion for those who exist at the edges. Designed with intention. Worn without apology.</p>
+  <a href="#collection" class="hero-cta">Explore the Collection</a>
+  <span class="hero-scroll">Scroll</span>
+</header>
+
+<section class="manifesto reveal" id="about">
+  <div class="manifesto-grid">
+    <div class="manifesto-text">
+      <p class="section-label">Our Manifesto</p>
+      <h2>Not Made for Everyone</h2>
+      <p>Void Society is an <em>artistic streetwear brand</em> built at the intersection of fashion and editorial identity. Every piece is designed to say something — without saying a word.</p>
+      <p>We don't follow trends. We study culture, shadow, and silence — then translate that into garments that carry weight.</p>
+    </div>
+    <div class="manifesto-stat">
+      <span class="manifesto-number" aria-hidden="true">VS</span>
+    </div>
+  </div>
+</section>
+
+<section class="collection-section reveal" id="collection">
+  <div class="collection-intro">
+    <div>
+      <p class="section-label">Current Drop</p>
+      <h2>The Void Collection</h2>
+      <p>Dark, considered garments for those who dress with purpose.</p>
+    </div>
+    <a href="#" class="view-all">View All Pieces →</a>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <div class="product-img"><span class="product-placeholder" aria-hidden="true">01</span></div>
+      <p class="product-tag">Outerwear</p>
+      <h3>Obsidian Coach Jacket</h3>
+      <p class="product-price">$148 CAD</p>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><span class="product-placeholder" aria-hidden="true">02</span></div>
+      <p class="product-tag">Tops</p>
+      <h3>Shadow Oversized Tee</h3>
+      <p class="product-price">$68 CAD</p>
+    </article>
+    <article class="product-card">
+      <div class="product-img"><span class="product-placeholder" aria-hidden="true">03</span></div>
+      <p class="product-tag">Bottoms</p>
+      <h3>Void Cargo Pant</h3>
+      <p class="product-price">$118 CAD</p>
+    </article>
+  </div>
+</section>
+
+<section class="philosophy-section reveal" id="philosophy">
+  <p class="section-label">Why We Exist</p>
+  <h2>Fashion as a Statement</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-num" aria-hidden="true">I</span>
+      <h3>Dark Aesthetic</h3>
+      <p>Every piece lives in shadow and negative space. We build garments that feel like art — not product.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num" aria-hidden="true">II</span>
+      <h3>Intentional Design</h3>
+      <p>Nothing is accidental. From silhouette to fabric weight — each decision is deliberate and considered.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num" aria-hidden="true">III</span>
+      <h3>Independent Vision</h3>
+      <p>No investors. No compromises. Void Society answers only to the people who wear it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <h2>Enter the Void</h2>
+  <p>New drops. No noise. Just dark streetwear done right.</p>
+  <div class="cta-group">
+    <a href="#collection" class="btn-primary">Shop the Drop</a>
+    <a href="#" class="btn-secondary">Follow @voidsociety</a>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" alt="Void Society" class="footer-logo">
+  <span class="footer-copy">© 2025 Void Society. Vancouver, BC. All rights reserved.</span>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
